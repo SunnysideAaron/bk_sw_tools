@@ -1,0 +1,48 @@
+rune_set_id,rune_set_name,pieces_required,rune_set_effect,dungeon,scenario,description,cri_rate_synergy,acc_synergy,res_synergy,atk_offensive_power_synergy,hp_offensive_power_synergy,def_offensive_power_synergy,def_power_synergy,support_power_synergy
+1,Energy,2,HP +15%,Giant's Keep,Garen Forest,"The increase is based on the monster's base HP.
+Grants a +15% HP increase per Energy set equipped. (+45% HP with 3 sets)",,,,,1,,1,1
+2,Guard,2,Defense +15%,Dragon's Lair,Hydeni Ruins,"The increase is based on the monster's base Defense.
+Grants a +15% Defense increase per Guard set equipped. (+45% DEF with 3 sets)",,,,,,1,1,
+3,Swift,4,Attack Speed +25%,Giant's Keep,Mt. White Ragon,The increase is based on the monster's base speed.,,,,,,,,1
+4,Blade,2,Critical Rate +12%,Giant's Keep,Kabir Ruins,"Increases the chance of landing a critical hit
+Grants +12% Critical Rate increase per Blade set equipped. (+36% CRI Rate with 3 sets)",1,,,1,1,1,,
+5,Rage,4,Critical Damage +40%,Necropolis,,"Increases Critical Damage by 40%.
+Critical Damage scales with damage based on Attack, HP, Speed, Defense, or the Opponent's HP, Speed, Defense.",,,,1,1,1,,
+6,Focus,2,Accuracy +20%,Dragon's Lair,Telain Forest,"Reduces the chance of a skill effect being resisted. 1
+Grants a +20% Accuracy increase per Focus set equipped. (+60% ACC with 3 sets)",,1,,,,,,1
+7,Endure,2,Resistance +20%,Dragon's Lair,Tamor Desert,"Increases the chances of resisting an enemy debuff being applied to your monster.
+Grants +20% Resistance increase per Endure set equipped. (+60% RES with 3 sets)",,,1,,,,,
+8,Fatal,4,Attack Power +35%,Giant's Keep,Mt. Siz,The increase is based on the monster's base Attack.,,,,1,,,,
+10,Despair,4,Stun Rate +25%,Giant's Keep,,"Adds a 25% chance stun to all skills that deal damage immediately (e.g. mounting bombs do not activate despair effect).
+Despair stun chance is independent from inherent skills stun chance. (i.e. It adds another roll.)
+Despair stuns cannot be resisted (except by Immunity, passives that make the monster immune to stun, and all non-scenario boss monsters).
+Despair stuns may still activate on Glancing Hits but will not stick.
+Multi-hit skills only activate despair stuns on subsequent hits if the first hit per monster activates Despair. 4
+Each new skill use in a chain has an independent chance to activate Despair stun.",,,,,,,,
+11,Vampire,4,Life Drain +35%,Necropolis,Mt. Runar,"Recovers HP by 35% of the damage dealt.
+Stack with skill that drains HP (eg. Lapis, Verdehile).
+Doesn't work with continuous damage or any skill that is a percentage of enemy's HP (eg. Sigmarus' third skill).",,,,,,,,
+13,Violent,4,Get Extra Turn +22%,Dragon's Lair,,"Adds a 22% chance to receive an extra turn when using any active skill.
+Each subsequent turn has a 45% reduced chance of activation than the previous chance. (22%, 12.1%, 6.7%, ...)",,,,,,,,
+14,Nemesis,2,ATK Gauge +4% (for every 7% HP lost),Necropolis,Ferun Castle,"The attack gauge increases by 4% per set equipped for every 7% HP lost (12% increase with 3 sets). 
+Multi-hit attacks must each take 7% HP at least to activate the rune.
+Doesn't work with continuous damage or any skill that sacrifice your monster HP.",,,,,,,,
+15,Will,2,Immunity +1 turn,Necropolis,Aiden Forest,"Grants immunity for 1 turn per set equipped at the start of the battle (3 turns with 3 sets).
+This immunity is a removable buff
+The rune's effect will reactivate when a new wave starts (Secret Dungeons excluded), but won't reactivate if monster is revived.",,,,,,,,
+16,Shield,2,Ally Shield 3 turns (15% of HP),Dragon's Lair,Vrofagus Ruins,"All allies get a shield worth 15% of runed monster's base HP (45% HP with 3 sets).
+The shield amount will stack when multiple monsters are equipped with shield rune (225% HP at Max if 5 monsters use 3 sets each).2
+This shield is removable buff.
+The shield will reactivate when a new wave starts (Secret Dungeons excluded), but does not reactivate after revival.",,,,,,,,
+17,Revenge,2,Counterattack +15%,Dragon's Lair,Faimon Volcano,"Counterattacks with first skill, dealing 75% of its original damage when attacked with 15% chance (45% chance with 3 sets).3
+""Additional Turn"" effects won't be triggered when counterattacking.
+Turns aren't used up when counterattacking.
+First skill effect and passive skill are activated on counterattacks unless stated otherwise in the skill description. Despair and Vampire rune effects can also activate.",,,,,,,,
+18,Destroy,2,30% of the damage dealt will reduce up to 4% of the enemy's Max HP,Necropolis,Chiruka Remains,"Up to 60% of the enemy's Max HP can be reduced permanently in battle (The enemy's Max HP can't go below 40% of its original value)
+Destroy effects only apply once per turn and not per hit.
+Destroy runes don't increase the damage you dealt. It only reduces the enemy's Max HP based on the damage you dealt up to 4% of the enemy's Max HP (12% of the enemy's Max HP with 3 sets)",,,,,,,,
+19,Fight,2,Allies' ATK +8%,Rift Dungeon,,Increases Attack of all allies by 8% of their base attack.,,,,1,,,,
+20,Determination,2,Allies' DEF +8%,Rift Dungeon,,Increases Defence of all allies by 8% of their base defense.,,,,,,1,1,
+21,Enhance,2,Allies' HP +8%,Rift Dungeon,,Increases Hp of all allies by 8% of their base hp.,,,,,1,,1,1
+22,Accuracy,2,Allies' ACC +10%,Rift Dungeon,,Increases Accuracy of all allies by 10%.,,1,,,,,,1
+23,Tolerance,2,Allies' RES +10%,Rift Dungeon,,Increases Resistance of all allies by 10%.,,,1,,,,,

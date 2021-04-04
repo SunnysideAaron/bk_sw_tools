@@ -1,0 +1,9 @@
+rank,rarity_name,rarity_color,rarity_level,no_of_rolls
+1,Normal,White,0,4
+2,Magic,Green,3,5
+3,Rare,Blue,6,6
+4,Hero,Purple,9,7
+5,Legendary,Orange,12,8
+13,Ancient Rare,Blue,6,6
+14,Ancient Hero,Purple,9,7
+15,Ancient Legendary,Orange,12,8

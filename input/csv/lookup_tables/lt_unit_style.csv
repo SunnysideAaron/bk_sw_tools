@@ -1,0 +1,5 @@
+unit_style_id,unit_style
+1,Attack
+2,Defense
+3,HP
+4,Support

@@ -1,0 +1,36 @@
+DROP VIEW IF EXISTS bdt_unit_priority;
+
+create view bdt_unit_priority as
+select pu.unit_id
+, (ifnull(pu.use_for_gb12,0)
+  + ifnull(pu.use_for_db12,0)
+  + ifnull(pu.use_for_nb12,0)
+  + ifnull(pu.use_for_sf10,0)
+  + ifnull(pu.use_for_pc10,0)
+  + ifnull(pu.use_for_toa,0)
+  + ifnull(pu.use_for_dhole_griffon,0)
+  + ifnull(pu.use_for_dhole_inugami,0)
+  + ifnull(pu.use_for_dhole_warbear,0)
+  + ifnull(pu.use_for_dhole_fairy,0)
+  + ifnull(pu.use_for_dhole_pixie,0)
+  + ifnull(pu.use_for_dhole_werewolf,0)
+  + ifnull(pu.use_for_dhole_cat,0)
+  + ifnull(pu.use_for_dhole_howl,0)
+  + ifnull(pu.use_for_dhole_grim,0)
+  + ifnull(pu.use_for_dhole_karzhan,0)
+  + ifnull(pu.use_for_dhole_ellunia,0)
+  + ifnull(pu.use_for_dhole_lumel,0)
+  + ifnull(pu.use_for_dhole_khalderun,0)
+  + ifnull(pu.use_for_d_predator,0)
+  + ifnull(pu.use_for_rift_beast_fire,0)
+  + ifnull(pu.use_for_rift_beast_ice,0)
+  + ifnull(pu.use_for_rift_beast_wind,0)
+  + ifnull(pu.use_for_rift_beast_light,0)
+  + ifnull(pu.use_for_rift_beast_dark,0)
+  + ifnull(pu.use_for_r5,0)
+  + ifnull(pu.use_for_lab,0)
+  + ifnull(pu.use_for_arena,0)
+  + ifnull(pu.use_for_gwo,0)
+  + ifnull(pu.use_for_gwd,0)
+  + ifnull(pu.use_for_rta,0)) as priority
+from s_player_unit pu;

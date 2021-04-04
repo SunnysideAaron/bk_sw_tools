@@ -1,0 +1,6 @@
+attribute_id,day_of_week_order,attribute,sortable_attribute,color_hex_code
+1,4.3,Water,(1) Water,#0001d0
+2,3,Fire,(2) Fire,#bf2600
+3,5,Wind,(3) Wind,#dddd00
+4,1,Light,(4) Light,#fffafa
+5,2,Dark,(5) Dark,#331144
