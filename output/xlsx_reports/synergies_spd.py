@@ -1,4 +1,4 @@
-from src.xlsx_data_replace import XlsxDataReplace
+from bk_db_tools.xlsx_data_replace import XlsxDataReplace
 
 class SynergiesSpd(XlsxDataReplace):
     dataSets = [
