@@ -18,7 +18,7 @@ class InstallDb:
         #and recreate
         self.db = Database(self.settings)        
         
-        print ('Setting up lookup tabales')
+        print ('\nSetting up lookup tabales')
         csvImporter = CsvImporter(self.db)
         csvImporter.do_import('input/csv/lookup_tables')
         
