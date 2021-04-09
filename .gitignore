@@ -128,7 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-master.db
 input/*.json
 output/sql/*.xlsx
 output/data_dump.xlsx
