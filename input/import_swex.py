@@ -3,10 +3,10 @@ import json
 import os
 from pathlib import Path
 
-from src.database import Database
-
 class ImportSwex: 
-    db = Database()
+    def __init__(self, settings, db):
+        self.settings = settings
+        self.db = db 
     
     def run_script(self, params):
         self.create_tables()

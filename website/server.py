@@ -8,12 +8,12 @@ from bottle import (
     template,
     TEMPLATE_PATH,
 )
-from src.database import Database
-from settings import Settings
 from pathlib import Path
 
 class Server: 
-    db = Database()
+    def __init__(self, settings, db):
+        self.settings = settings
+        self.db = db
     
     def run_script(self, params):
         self._app = Bottle()
@@ -26,8 +26,8 @@ class Server:
         BaseTemplate.defaults['rank_color'] = self._rank_color
         
         self._app.run(
-            host=Settings.host,
-            port=Settings.port,
+            host=self.settings.host,
+            port=self.settings.port,
             debug=True,
             reloader=True
         )
