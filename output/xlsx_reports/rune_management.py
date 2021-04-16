@@ -5,8 +5,8 @@ class RuneManagement(XlsxDataReplace):
         {
             'sheetName':'inventory',
             'firstColumn':1,
-            'firstRow':10,
-            'lastRow':15,
+            'firstRow':11,
+            'lastRow':16,
             'sql':"""
             select sxr.slot_no
             , count(sxr.rune_id) as 'count'
