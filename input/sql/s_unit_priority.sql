@@ -1,6 +1,6 @@
-DROP VIEW IF EXISTS bdt_unit_priority;
+DROP VIEW IF EXISTS s_unit_priority;
 
-create view bdt_unit_priority as
+create view s_unit_priority as
 select pu.unit_id
 , (ifnull(pu.use_for_gb12,0)
   + ifnull(pu.use_for_db12,0)
@@ -31,6 +31,5 @@ select pu.unit_id
   + ifnull(pu.use_for_lab,0)
   + ifnull(pu.use_for_arena,0)
   + ifnull(pu.use_for_gwo,0)
-  + ifnull(pu.use_for_gwd,0)
-  + ifnull(pu.use_for_rta,0)) as priority
+  + ifnull(pu.use_for_gwd,0)) as priority
 from s_player_unit pu;

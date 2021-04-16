@@ -250,7 +250,7 @@ class Server:
         , apu.user_setting as pri_effect_tier
         from swex_unit_list ul
         join swarfarm_monster_names mn on ul.com2us_id = mn.com2us_id
-        left join bdt_unit_priority up on ul.unit_id = up.unit_id
+        left join s_unit_priority up on ul.unit_id = up.unit_id
         left join swarfarm_skills s1 on ul.skills_1_id = s1.com2us_id
         left join swarfarm_skills s2 on ul.skills_2_id = s2.com2us_id
         left join swarfarm_skills s3 on ul.skills_3_id = s3.com2us_id
