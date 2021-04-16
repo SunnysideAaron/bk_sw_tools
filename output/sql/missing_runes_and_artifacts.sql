@@ -1,5 +1,7 @@
 select sfmn.full_name
 , sxul.class as stars
+, sfmn.natural_stars
+, up.priority
 , CASE
 	WHEN sxul.rune_slot_1_id = 0 THEN "Missing"
   END AS Rune1
@@ -26,6 +28,7 @@ select sfmn.full_name
   END AS Artifact2  
 from swex_unit_list as sxul
 left join swarfarm_monster_names sfmn on sxul.com2us_id = sfmn.com2us_id
+left join s_unit_priority up on sxul.unit_id = up.unit_id
 where sxul.class >= 5
 and (sxul.rune_slot_1_id = 0
   or sxul.rune_slot_2_id = 0
@@ -39,5 +42,7 @@ and (sxul.rune_slot_1_id = 0
 	  or sxul.artifact_slot_2_rid = 0)
   )
 )
-order by sxul.class desc
+order by up.priority desc
+, sxul.class desc
+, sfmn.natural_stars desc
 , sfmn.full_name;
