@@ -16,19 +16,54 @@ class ImportSwex:
 
         self.insert_unit_list(jsonData['unit_list'])
         
+        for deco in jsonData['deco_list']: 
+            self.insert_deco(deco)
+        
         for unit in jsonData['unit_list']: 
             for rune in unit['runes']:
                 self.insert_rune(rune)
             for artifact in unit['artifacts']:
                 self.insert_artifact(artifact)    
         
+        for inventory in jsonData['inventory_info']: 
+            self.insert_inventory(inventory)
+        
         for rune in jsonData['runes']: 
             self.insert_rune(rune)
 
+        for rune_craft_item in jsonData['rune_craft_item_list']: 
+            self.insert_rune_craft_item(rune_craft_item)
+            
         for artifact in jsonData['artifacts']: 
             self.insert_artifact(artifact)
 
+        for rta_rune in jsonData['world_arena_rune_equip_list']: 
+            self.insert_rta_rune(rta_rune)
+
+        for rta_artifact in jsonData['world_arena_artifact_equip_list']: 
+            self.insert_rta_artifact(rta_artifact)
+  
     def create_tables(self):
+        sql = """
+        DROP TABLE IF EXISTS swex_deco_list
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        CREATE TABLE swex_deco_list (
+          wizard_id int
+        , deco_id int
+        , decoration_id int
+        , island_id int
+        , pos_x int
+        , pos_y int
+        , level int
+        );
+        """
+
+        self.db.execute(sql)
+
         sql = """
         DROP TABLE IF EXISTS swex_unit_list
         """
@@ -87,6 +122,23 @@ class ImportSwex:
         self.db.execute(sql)
         
         sql = """
+        DROP TABLE IF EXISTS swex_inventory_info
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        CREATE TABLE swex_inventory_info (
+          wizard_id int
+        , item_master_type int
+        , item_master_id int
+        , item_quantity int
+        );
+        """
+
+        self.db.execute(sql)
+        
+        sql = """
         DROP TABLE IF EXISTS swex_runes
         """
 
@@ -127,6 +179,25 @@ class ImportSwex:
         , sec_eff_4_gemmed int
         , sec_eff_4_grind int
         , extra int
+        );
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        DROP TABLE IF EXISTS swex_rune_craft_item_list
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        CREATE TABLE swex_rune_craft_item_list (
+          craft_item_id int
+        , wizard_id int
+        , craft_type int
+        , craft_type_id int
+        , sell_value int
+        , amount int
         );
         """
 
@@ -184,7 +255,38 @@ class ImportSwex:
         """
 
         self.db.execute(sql)
-        
+
+        sql = """
+        DROP TABLE IF EXISTS swex_rta_runes
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        CREATE TABLE swex_rta_runes (
+          rune_id int
+        , occupied_id int
+        );
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        DROP TABLE IF EXISTS swex_rta_artifacts
+        """
+
+        self.db.execute(sql)
+
+        sql = """
+        CREATE TABLE swex_rta_artifacts (
+          rid int
+        , artifact_id int  
+        , occupied_id int
+        );
+        """
+
+        self.db.execute(sql)
+
         self.db.commit()
 
     def create_views(self):
@@ -498,6 +600,40 @@ class ImportSwex:
             jsonData = json.load(jsonFile)
         return jsonData
 
+    def insert_deco(self, deco):
+        sql = """
+        INSERT INTO swex_deco_list (
+          wizard_id
+        , deco_id
+        , decoration_id
+        , island_id
+        , pos_x
+        , pos_y
+        , level
+        ) VALUES (
+          ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        );
+        """   
+
+        params = (
+            deco['wizard_id'],
+            deco['deco_id'],
+            deco['master_id'],
+            deco['island_id'],
+            deco['pos_x'],
+            deco['pos_y'],
+            deco['level'])
+
+        self.db.execute(sql, params)
+        
+        self.db.commit()
+
     def insert_unit_list(self, unitList):
         sql = """
         INSERT INTO swex_unit_list (
@@ -706,6 +842,31 @@ class ImportSwex:
 
             self.db.commit()
         
+    def insert_inventory(self, inventory):
+        sql = """
+        INSERT INTO swex_inventory_info (
+          wizard_id
+        , item_master_type
+        , item_master_id
+        , item_quantity
+        ) VALUES (
+          ?
+        , ?
+        , ?
+        , ?
+        );
+        """   
+
+        params = (
+            inventory['wizard_id'],
+            inventory['item_master_type'],
+            inventory['item_master_id'],
+            inventory['item_quantity'])
+
+        self.db.execute(sql, params)
+        
+        self.db.commit()        
+               
     def insert_rune(self, rune):
         sql = """
         INSERT INTO swex_runes (
@@ -858,6 +1019,37 @@ class ImportSwex:
         self.db.execute(sql, params)
         
         self.db.commit()
+
+    def insert_rune_craft_item(self, rune_craft_item):
+        sql = """
+        INSERT INTO swex_rune_craft_item_list (
+          craft_item_id
+        , wizard_id
+        , craft_type
+        , craft_type_id
+        , sell_value
+        , amount        
+        ) VALUES (
+          ?
+        , ?
+        , ?
+        , ?
+        , ?
+        , ?
+        );
+        """   
+
+        params = (
+            rune_craft_item['craft_item_id'],
+            rune_craft_item['wizard_id'],
+            rune_craft_item['craft_type'],
+            rune_craft_item['craft_type_id'],
+            rune_craft_item['sell_value'],
+            rune_craft_item['amount'])
+
+        self.db.execute(sql, params)
+        
+        self.db.commit() 
 
     def insert_artifact(self, artifact):
         sql = """
@@ -1045,4 +1237,43 @@ class ImportSwex:
         
         self.db.commit()
 
+    def insert_rta_rune(self, rta_rune):
+        sql = """
+        INSERT INTO swex_rta_runes (
+          rune_id
+        , occupied_id
+        ) VALUES (
+          ?
+        , ?
+        );
+        """
+                        
+        params = (
+            rta_rune['rune_id'],
+            rta_rune['occupied_id'])
 
+        self.db.execute(sql, params)
+        
+        self.db.commit()
+
+    def insert_rta_artifact(self, rta_artifact):
+        sql = """
+        INSERT INTO swex_rta_artifacts (
+          rid
+        , artifact_id 
+        , occupied_id
+        ) VALUES (
+          ?
+        , ?
+        , ?
+        );
+        """
+    
+        params = (
+            rta_artifact['rid'],
+            rta_artifact['artifact_id'],
+            rta_artifact['occupied_id'])
+
+        self.db.execute(sql, params)
+        
+        self.db.commit()

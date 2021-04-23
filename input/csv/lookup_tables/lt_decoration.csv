@@ -1,0 +1,21 @@
+decoration_id,name,shop_order,simple_order,description,short_description
+4,Guardstone,14,9,"In the deepest sandpits of Tamor Desert, a pure crystal of sand grows every thousand years. Carved from this crystal, the guardstone has a miraculous ability to absorb evil energy.",DEF +AMOUNT%
+5,Mana Fountain,11,1,,Mana Stone(s) Production Speed +AMOUNT%
+6,Sky Tribe Totem,22,10,,SPD +AMOUNT%
+7,Arcane Booster,23,5,,Arcane Tower Attack Speed +AMOUNT%
+8,Crystal Alter,21,8,,HP +AMOUNT%
+9,Ancient Sword,20,7,,ATK +AMOUNT%
+10,Sanctum of Energy,9,4,"A structure used to leap between worlds centuries ago. Although long since abandoned because of its tendency to send travelors to random destinations and impossibly high energy consumption, it still holds great symbolic value.",Energy Max. Storage +AMOUNT
+11,Mysterious Plant,12,3,,Energy Production Speed +AMOUNT%
+15,Fire Sanctuary,16,13,,Fire ATK +AMOUNT%
+16,Water Sanctuary,15,12,,Water ATK +AMOUNT%
+17,Wind Sanctuary,17,14,,Wind ATK +AMOUNT%
+18,Light Sanctuary,18,15,,Light ATK +AMOUNT%
+19,Dark Sanctuary,19,16,,Dark ATK +AMOUNT%
+31,Fallen Ancient Keeper,24,11,,CRI Dmg +AMOUNT%
+34,Crystal Rock,13,6,,Arcane Tower's Attack Power +AMOUNT%
+35,Fairy Tree,10,2,,Mana Stone(s) Max. Storage +AMOUNT
+36,Flag of Battle,25,17,,Guild Content ATK +AMOUNT%
+37,Flag of Rage,26,20,,Guild Content CRI Dmg +AMOUNT%
+38,Flag of Hope,27,18,,Guild Content HP +AMOUNT%
+39,Flag of Will,28,19,,Guild Content DEF +AMOUNT%
