@@ -134,3 +134,4 @@ output/data_dump.xlsx
 input/settings/~$s_other.xlsx
 output/xlsx_reports/~$rune_management.xlsx
 *.db-journal
+output/xlsx_reports/~$speed_charts.xlsx
