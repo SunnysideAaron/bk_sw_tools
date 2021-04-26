@@ -591,7 +591,7 @@ class ImportSwex:
 
     def load_file(self):
         #20/80 rule, just hard code the path.
-        search = str(Path(__file__).parent.absolute()) + '\*.json'
+        search = str(Path(__file__).parent.absolute() / '*.json')
         
         list_of_files = glob.glob(search)
 
