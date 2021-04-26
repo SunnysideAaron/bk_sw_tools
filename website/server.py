@@ -18,7 +18,7 @@ class Server:
     def run_script(self, params):
         self._app = Bottle()
         self._route()
-        views_dir = str(Path(__file__).parent.absolute()) + '\\views\\'
+        views_dir = str(Path(__file__).parent.absolute() / 'views')
         TEMPLATE_PATH.insert(0, views_dir)
         BaseTemplate.defaults['artifact_details'] = self._artifact_details
         BaseTemplate.defaults['sub_effects'] = self._sub_effects

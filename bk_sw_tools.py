@@ -86,6 +86,7 @@ if args.script:
     className = ''.join(ele.title() for ele in temp)
     
     classLocation = str(filePath.parent).replace('\\', '.')
+    classLocation = classLocation.replace('/', '.')
     classLocation = classLocation + '.' + filePath.stem + '.' + className
     
     scriptClass = locate(classLocation)
